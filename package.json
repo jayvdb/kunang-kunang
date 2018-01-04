@@ -1,0 +1,11 @@
+{
+  "name": "kunang-kunang-jekyll",
+  "version": "0.0.0",
+  "main": "index.html",
+  "author": "Yana Agun Siswanto <yana.developer@gmail.com>",
+  "license": "-",
+  "private": true,
+  "dependencies": {
+    "netlify-cms": "^1.0.3"
+  }
+}
