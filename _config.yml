@@ -4,6 +4,7 @@ description: >-
   Kunang-Kunang adalah sebuah komunitas yang peduli terhadap masalah kesehatan, khususnya kesehatan remaja.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+name: Kunang Kunang
 twitter_username: jekyllrb
 github_username:  jekyll
 

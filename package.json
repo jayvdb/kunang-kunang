@@ -8,6 +8,8 @@
   "dependencies": {
     "bulma": "^0.6.1",
     "bulma-carousel": "^0.2.4",
+    "bulma-divider": "^0.1.0",
+    "font-awesome": "^4.7.0",
     "netlify-cms": "^1.0.3"
   },
   "devDependencies": {
@@ -17,8 +19,12 @@
     "babel-preset-es2016": "^6.24.1",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "font-awesome-webpack": "^0.0.5-beta.2",
     "node-sass": "^4.7.2",
+    "resolve-url-loader": "^2.2.1",
     "sass-loader": "^6.0.6",
+    "url-loader": "^0.6.2",
     "webpack": "^3.10.0"
   },
   "scripts": {

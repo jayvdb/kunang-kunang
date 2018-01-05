@@ -1,10 +1,5 @@
-$carousel-title-size: 3em
-$fa-font-path:   "./fonts"
-
 @import 'bulma/bulma'
 @import 'bulma-carousel/carousel'
-@import 'bulma-divider/bulma-divider'
-@import 'font-awesome/scss/font-awesome.scss'
 
 .site-header
   padding: 15px 40px
@@ -22,7 +17,7 @@ $fa-font-path:   "./fonts"
   margin-top: 0
   margin-bottom: 0
   .post-header
-    background-color: rgba(1,1,1,0)
+    background-color: rgba(0,0,0, 0.8)
     -webkit-background-size: cover
     -moz-background-size: cover
     -o-background-size: cover
@@ -35,31 +30,24 @@ $fa-font-path:   "./fonts"
       max-width: 40vw
     max-height: 100vh
     .post-content
-      padding-top: 5em
+      padding-top: 200px
       overflow: scroll
     .post-header
       max-width: 50vw
 .card
   .card-link
-    border: 1px solid transparent
-    bottom: 0
-    left: 0
-    position: absolute
-    right: 0
-    top: 0
-    -webkit-transition: border-color .3s,border-width .3s
-    transition: border-color .3s,border-width .3s
-    z-index: 4
+    border: 1px solid transparent;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transition: border-color .3s,border-width .3s;
+    transition: border-color .3s,border-width .3s;
+    z-index: 4;
+
     &:hover
-      border-color: rgba(0,0,0,.2)
-      border-width: 15px
+      border-color: rgba(0,0,0,.2);
+      border-width: 15px;
 .post-list
   padding: 10px
-
-.cover-link
-    bottom: 0
-    left: 0
-    position: absolute
-    right: 0
-    top: 0
-    z-index: 4

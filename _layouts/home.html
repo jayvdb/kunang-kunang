@@ -7,22 +7,17 @@ layout: default
     <div class="hero-carousel">
       <div class='carousel-container'>
         <div class='carousel-content carousel-animate carousel-animate-fade'>
-          <div class='carousel-item'>
-            <div class="hero-body has-text-centered">
-              <img class="is-background" src="https://wikiki.github.io/images/merry-christmas.jpg" alt="" />
-              hello world
-              <div>Hello world</div>
-            </div>
-          </div>
-          <div class='carousel-item'>
-            <img class="is-background" src="https://wikiki.github.io/images/singer.jpg" alt="" />
-          </div>
-          <div class='carousel-item'>
-            <img class="is-background" src="https://wikiki.github.io/images/sushi.jpg" alt="" />
-          </div>
-          <div class='carousel-item'>
-            <img class="is-background" src="https://wikiki.github.io/images/life.jpg" alt="" />
-          </div>
+          {% for post in site.posts%}
+            {% if post.featured %}
+              <div class='carousel-item'>
+                <img class="is-background" src="{{post.image}}" alt="" />
+                <div class="title">
+                  {{post.title}}
+                  <a href="{{post.url | relative_url}}" class="cover-link"></a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
         <div class="carousel-nav-left">
           <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -38,19 +33,26 @@ layout: default
   </section>
   {{ content }}
 
-  <div class="post-list columns">
+  <div class="post-list columns content">
     {% for post in site.posts %}
-      <section class="column is-one-third">
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <div class="card column is-half-tablet is-one-third-desktop">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <img src="{{post.image | relative_url}}" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media-content">
+            <p class="title is-4">{{post.title | escape}}</p>
+            <p class="subtitle is-6"></p>
+          </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </h2>
-      </section>
+          <div class="content">
+            {{post.description | escape}}
+          </div>
+          <a class="card-link" href="{{post.url | relative_url}}"></a>
+        </div>
+      </div>
     {% endfor %}
   </div>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-
 </div>
