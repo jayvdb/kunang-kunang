@@ -1,0 +1,35 @@
+---
+layout: default_post
+---
+<article class="post columns" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header column hero is-medium is-primary is-bold is-large"
+    {% if page.image %}
+      style="background-image: url({{ page.image | relative_url }}); background-repeat: no-repeat; background-position: center center;"
+    {% endif %}
+  >
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="post-title title" itemprop="name headline">{{ page.title | escape }}</h1>
+        <p class="post-meta subtitle">
+          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+            {{ page.date | date: date_format }}
+          </time>
+          {% if page.author %}
+            • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <div class="post-content column" itemprop="articleBody">
+    {{ content }}
+    {% include footer.html %}
+  </div>
+
+  {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
+</article>

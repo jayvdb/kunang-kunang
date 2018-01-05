@@ -3,3 +3,5 @@ _site
 .jekyll-metadata
 admin/cms.css
 admin/cms.js
+assets/*.min.js
+assets/*.min.css

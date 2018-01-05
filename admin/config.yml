@@ -1,18 +1,20 @@
 backend:
   name: git-gateway
-media_folder: "site/static/img"
-public_folder: "site/static/img"
+media_folder: "assets/images"
+public_folder: "assets/images"
 
 collections:
   - name: "post"
     label: "Post"
     folder: "_posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.markdown"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Intro Blurb", name: "description", widget: "text"}
+      - {label: "Intro (Description)", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Featured?", name: "featured", widget: "boolean"}
+      - {label: "Featured?", name: "featured", widget: "boolean", required: false}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+    
