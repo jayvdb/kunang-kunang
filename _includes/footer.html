@@ -15,7 +15,42 @@
   </div>
 </footer>
 
-{{ site.bitrix_chat_embed }}
+{% if site.bitrix_chat_embed %}
+  <script type="text/javascript">
+    const bitrixHandler = (mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if(node.querySelector && node.querySelector('.b24-widget-button-social')) {
+            let social_buttons = node.querySelector('.b24-widget-button-social');
+            const bitrix_link_style = "font-size: 1.5vw;display: flex;align-items: center;justify-content: center; background-color: rgb(0, 174, 239); color: white;";
+
+            if({{ site.whatsapp | default: 'null' }}){
+              let whatsapp = $('<a>')
+              whatsapp.addClass('b24-widget-button-social-item fa fa-whatsapp');
+              whatsapp.append($('<span class="b24-widget-button-social-tooltip">WhatsApp</span>'));
+              whatsapp.attr("style", bitrix_link_style);
+              whatsapp.attr("href", "whatsapp://send?text=Hi There, I'm comming from:\n" + window.location.href + "&phone=" + {{site.whatsapp | default: '""'}});
+              social_buttons.appendChild(whatsapp[0]);
+            }
+
+            if({{ site.line | default: 'null' }}){
+              let line = $('<a>')
+              line.addClass('b24-widget-button-social-item fa fa-user-o');
+              line.append($('<span class="b24-widget-button-social-tooltip">Line</span>'));
+              line.attr("style", bitrix_link_style);
+              line.attr("href", "line://ti/p/~" + {{ site.line | default: '""'}});
+              social_buttons.appendChild(line[0]);
+            }
+          }
+        });
+      });
+    }
+    var observer = new MutationObserver(bitrixHandler);
+    observer.observe(document.body, {childList: true});
+  </script>
+  {{ site.bitrix_chat_embed }}
+{% endif %}
+
 {% if jekyll.environment != "production" %}
 
   <script charset="utf-8">

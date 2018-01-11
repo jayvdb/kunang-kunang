@@ -7,6 +7,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 name: Kunang Kunang
 twitter_username: jekyllrb
 github_username:  jekyll
+whatsapp: +6212345678
 
 bitrix_contact_embed_code: >
   <script id="bx24_form_inline" data-skip-moving="true">
