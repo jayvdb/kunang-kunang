@@ -29,7 +29,7 @@
               whatsapp.addClass('b24-widget-button-social-item fa fa-whatsapp');
               whatsapp.append($('<span class="b24-widget-button-social-tooltip">WhatsApp</span>'));
               whatsapp.attr("style", bitrix_link_style);
-              whatsapp.attr("href", "whatsapp://send?text=Hi There, I'm comming from:\n" + window.location.href + "&phone=" + {{site.whatsapp | default: '""'}});
+              whatsapp.attr("href", "whatsapp://send?text=Hi There, I'm comming from:\n" + window.location.href + "&phone=" + "{{site.whatsapp}}");
               social_buttons.appendChild(whatsapp[0]);
             }
 
@@ -38,7 +38,7 @@
               line.addClass('b24-widget-button-social-item fa fa-user-o');
               line.append($('<span class="b24-widget-button-social-tooltip">Line</span>'));
               line.attr("style", bitrix_link_style);
-              line.attr("href", "line://ti/p/~" + {{ site.line | default: '""'}});
+              line.attr("href", "line://ti/p/~" + "{{ site.line}}");
               social_buttons.appendChild(line[0]);
             }
           }
