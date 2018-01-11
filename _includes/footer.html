@@ -8,9 +8,68 @@
         <a class="button" href="https://www.facebook.com/kunangkunangid-1907030446228950/"><i class="btn fa fa-facebook"></i></a>
         <a class="button" href="https://www.instagram.com/kunangkunang.id/"><i class="btn fa fa-instagram"></i></a>
         <a class="button" href="https://twitter.com/KUNANGKUNANG_ID"><i class="btn fa fa-twitter"></i></a>
+        <a class="button" href="whatsapp://send?text=Hello World!&phone=+6283820423473"><i class="btn fa fa-whatsapp"></i></a>
+        <a class="button" href="intent://ti/p/yana.dev#Intent;scheme=line;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=jp.naver.line.android;end"><i class="btn fa">Line</i></a>
       </p>
     </div>
   </div>
 </footer>
 
 {{ site.bitrix_chat_embed }}
+{{ jekyll.environment }}
+{% if jekyll.environment != "production" %}
+
+  <script charset="utf-8">
+    const _debug_user_location = (position) => {
+      const url = 'http://nominatim.openstreetmap.org/reverse'
+      const params = {
+        format: 'json',
+        lat: position.coords.latitude,
+        lon: position.coords.longitude,
+        zoom: 18,
+        addressdetails: 1
+      }
+      $.get(url, params).done( (data) => {
+        let $tbody = $('<tbody>');
+        let $table = $('<table>').append('<thead>').append($tbody);
+        $table.addClass('table')
+        $tbody
+          .append(
+            $('<tr>').append('<td>Country<td><td>' + data['address']['country'] + '</td>')
+          )
+          .append(
+            $('<tr>').append('<td>Lat<td><td>' + data['lat'] + '</td>')
+          )
+          .append(
+            $('<tr>').append('<td>Lon<td><td>' + data['lon'] + '</td>')
+          )
+          .append(
+            $('<tr>').append('<td>Name<td><td>' + data['display_name'] + '</td>')
+          )
+          .append(
+            $('<tr>').append('<td>State District<td><td>' + data['address']['state_district'] + '</td>')
+          )
+          .append(
+            $('<tr>').append('<td>Postcode<td><td>' + data['address']['postcode'] + '</td>')
+          )
+        $table.appendTo('#debug .content p');
+        console.log(data);
+      })
+      console.log(position);
+    }
+    const _debug_show_error = (error) => {
+      console.error(error);
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      $('#_debug_close').on('click', () => $('#debug').fadeOut())
+      navigator.geolocation.getCurrentPosition(_debug_user_location, _debug_show_error);
+    });
+  </script>
+  <section id="debug" class="notification is-warning" style="position: fixed; bottom: 0; width: 100%; z-index: 10">
+    <button class="delete" id="_debug_close"></button>
+    <div class="content has-text-centered">
+      <h4>You are in preview mode</h4>
+      <p>Debug Information: </p>
+    </div>
+    </section>
+{% endif %}
