@@ -1,0 +1,18 @@
+---
+layout: page
+title: Kirim Pesan
+---
+{% if site.bitrix_contact_embed_code %}
+  {{ site.bitrix_contact_embed_code }}
+{% else %}
+  <script id="bx24_form_inline" data-skip-moving="true">
+        (function(w,d,u,b){w['Bitrix24FormObject']=b;w[b] = w[b] || function(){arguments[0].ref=u;
+                (w[b].forms=w[b].forms||[]).push(arguments[0])};
+                if(w[b]['forms']) return;
+                var s=d.createElement('script');s.async=1;s.src=u+'?'+(1*new Date());
+                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://{{site.bitrix_url}}.bitrix24.com/bitrix/js/crm/form_loader.js','b24form');
+
+        b24form({"id":"4","lang":"en","sec":"{{site.bitrix_contact_sec}}","type":"inline"});
+  </script>
+{% endif %}

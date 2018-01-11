@@ -4,6 +4,9 @@ const extractSASS = new ExtractTextPlugin('bundle.min.css');
 
 module.exports = {
   context: path.resolve(__dirname, 'assets'),
+  watchOptions: {
+    ignored: "_site/*",
+  },
   entry: './main_webpack.es6',
   output: {
     filename: 'bundle.min.js',
