@@ -9,7 +9,7 @@ twitter_username: jekyllrb
 github_username:  jekyll
 whatsapp: +6212345678
 line: line_id
-
+subtitle: Kunang-Kunang, tempat berbagi kamu dan aku
 bitrix_contact_embed_code: >
   <script id="bx24_form_inline" data-skip-moving="true">
           (function(w,d,u,b){w['Bitrix24FormObject']=b;w[b] = w[b] || function(){arguments[0].ref=u;
