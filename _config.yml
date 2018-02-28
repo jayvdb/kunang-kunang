@@ -38,6 +38,7 @@ bitrix_chat_embed: >
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 sass:
   load_paths:
     - node_modules

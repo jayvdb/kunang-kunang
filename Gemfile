@@ -12,6 +12,7 @@ group :jekyll_plugins do
   # with lots of pre-tested plugins.
   gem "github-pages"
 
+  gem "jekyll-last-modified-at"
   gem "jekyll-netlify"
 end
 
