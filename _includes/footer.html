@@ -1,5 +1,8 @@
 <footer class="footer is-dark">
   <div class="container">
+    <div class="search" style="float:left">
+      {% jekyll_pages_api_search_interface %}
+    </div>
     <div class="content has-text-centered">
       <p class="is-white">
         <strong><a href="{{site.url}}">{{ site.title }}</a></strong> - {{ site.description }}

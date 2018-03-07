@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/jayvdb/jekyll_pages_api_search
+  revision: 8fcb14cce3b1eff6e531fc7c260b1ab74d4de973
+  branch: v0.4.4-safe
+  specs:
+    jekyll_pages_api_search (0.4.4)
+      jekyll_pages_api (~> 0.1.4)
+      sass (~> 3.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -78,6 +87,7 @@ GEM
     html-pipeline (2.7.1)
       activesupport (>= 2)
       nokogiri (>= 1.4)
+    htmlentities (4.3.4)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jekyll (3.6.2)
@@ -185,6 +195,9 @@ GEM
       jekyll (~> 3.3)
     jekyll-watch (1.5.1)
       listen (~> 3.0)
+    jekyll_pages_api (0.1.6)
+      htmlentities (~> 4.3)
+      jekyll (>= 2.0, < 4.0)
     jemoji (0.8.1)
       activesupport (~> 4.0, >= 4.2.9)
       gemoji (~> 3.0)
@@ -210,7 +223,7 @@ GEM
       forwardable-extended (~> 2.6)
     posix-spawn (0.3.13)
     public_suffix (2.0.5)
-    rb-fsevent (0.10.2)
+    rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rouge (2.2.1)
@@ -242,6 +255,8 @@ DEPENDENCIES
   github-pages
   jekyll-last-modified-at
   jekyll-netlify
+  jekyll_pages_api
+  jekyll_pages_api_search!
   tzinfo-data
 
 BUNDLED WITH

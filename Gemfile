@@ -14,6 +14,8 @@ group :jekyll_plugins do
 
   gem "jekyll-last-modified-at"
   gem "jekyll-netlify"
+  gem 'jekyll_pages_api'
+  gem 'jekyll_pages_api_search', git: 'git://github.com/jayvdb/jekyll_pages_api_search', branch: 'v0.4.4-safe'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

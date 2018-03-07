@@ -39,6 +39,15 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+jekyll_pages_api_search:
+  placeholder: Cari artikel...
+  index_fields:
+    title:
+      boost: 10
+    tags:
+      boost: 10
+
 sass:
   load_paths:
     - node_modules
